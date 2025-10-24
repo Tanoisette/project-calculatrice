@@ -10,16 +10,36 @@ let clearButton = document.querySelector('.clear');
 
 // Boucle  pour parcourir tous les boutons chiffres
 for (let i = 0; i < numberrButtons.length; i++) {
-  const button = numberButtons[i];
+  const button = numberrButtons[i];
 
   button.addEventListener('click', function() {
     const number = button.getAttribute('data-number');
 // ajout chiffre
-    display.textContent += number;
-  });
+   display.textContent += number;
+
+   //tentative pour enlever le 0 
+// if (display.text.content=0){
+    //     display.textContent = number;
+    // }else {
+    //     display.textContent += number;
+    // }
+ });
 }
+
 
 // Bouton c remettre a 0 clear
 clearButton.addEventListener('click', function() {
   display.textContent = '0';
 });
+
+let numOperator =document.querySelectorAll('[data-operator]')  
+
+for (let i = 0; i < numOperator.length; i++) {
+  const button = numOperator[i];
+
+  button.addEventListener('click', function() {
+    const operator = button.getAttribute('data-operator');
+// ajout chiffre
+   display.textContent += operator;
+ });
+}
